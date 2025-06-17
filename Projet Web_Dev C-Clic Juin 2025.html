@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Barre de navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e1e1e;
+            padding: 1rem 2rem;
+            color: darkgoldenrod;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+            .nav-links li a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+                .nav-links li a:hover {
+                    color: #00ccff;
+                }
+
+        .objective {
+            background-color: black;
+            padding: 4rem 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: center;
+            font-family: 'Times New Roman'
+        }
+
+
+        body {
+            font-family: 'Segoe UI', 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            background-color: #fdfbf9;
+            color: #333;
+        }
+
+        /* Section Accueil */
+        header {
+            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            color: white;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100%;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+            .overlay h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .overlay p {
+                max-width: 700px;
+                margin-bottom: 1rem;
+            }
+
+        .quote {
+            font-style: italic;
+            color: #e2dfdb;
+        }
+
+        .btn {
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background-color: #f4d06f;
+            color: #333;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #ffe48f;
+            }
+
+        main {
+            padding: 3rem 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .apropos-photo {
+            flex: 1;
+            text-align: right;
+            min-width: 50%;
+            height: auto;
+            max-width: 100%;
+        }
+
+            .apropos-photo img {
+                width: 200px;
+                border-radius: 12px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #444;
+            border-left: 4px solid #f4d06f;
+            padding-left: 0.5rem;
+        }
+
+        section p, li {
+            margin-bottom: 0.8rem;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 1.2rem;
+        }
+        .contact-section {
+            padding: 2rem;
+            max-width: 600px;
+            margin: 3rem auto;
+            background: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+
+            .contact-section h2 {
+                text-align: center;
+                margin-bottom: 1.5rem;
+                color: #333;
+            }
+
+        form label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        form button {
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #1e90ff;
+            color: saddlebrown;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            form button:hover {
+                background: #0b72cc;
+            }
+
+        #form-status {
+            margin-top: 1rem;
+            color: green;
+            font-style: italic;
+        }
+        #contact {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer {
+            font-family: 'Times New Roman';
+            align-items: center;
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: saddlebrown;
+            padding: 1rem 2rem;
+            color: gold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+    </style>
+    <script src="projet final script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ferdine Jemima SAINT-SIMON</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="overlay">
+            <h1>Bienvenue</h1>
+            <p>Dans cet espace numérique façonné avec curiosité et passion, je t’invite à découvrir mon parcours en développement web.</p>
+            <p class="quote">« Créer, c’est traduire l’invisible en structure. »</p>
+            <a href="#apropos" class="btn">Explorer</a>
+            <h2>Objectif</h2>
+            <p>Presenter mes competences en developpement web, de mettre en valeur les projets que j'ai realises dans le cadre de ma formation, ainsi que de partager mes centres d'interets.</p>
+            <p>Il servira egalement de point de contact professionnel, notamment pour d'eventuelles collaborations ou opportunites futures.</p>
+        </div>
+
+    </header>
+
+    <main>
+        <section id="apropos">
+            <h2>À propos</h2>
+            <p>Exploratrice de l’univers du code, j’ai trouvé dans le développement web un terrain d’expression riche où créativité et logique se rencontrent. Après un chemin parsemé de réinventions, je trace aujourd’hui ma voie, avec l’envie d’apprendre, de construire et de partager.</p>
+            <p>J'accorde une grande importance aux valeurs de croissance interieure, de patience et d'alignement.Mon travail reflète cette énergie douce mais déterminée — celle qui persiste, même dans l’incertitude.</p>
+        </section>
+        <section id="apropos">
+            <div class="apropos-photo">
+                <img src="C:\Users\SOJER\Documents\Activite Module 5\Ferdine page dev web projet final.jpg" alt="Portrait personnel" class="photo-reduite" />
+            </div>
+        </section>
+
+        <section id="competences">
+            <h2>Mes compétences</h2>
+            <h3><strong>Ce que je construis</strong></h3>
+            <ul>
+                <li><strong>HTML5</strong> – Structurer des pages claires et accessibles</li>
+                <li><strong>CSS3</strong> – Donner vie aux formes et aux couleurs</li>
+                <li><strong>JavaScript</strong> – Premiers pas dans l’interactivité (En cours d'exploration)</li>
+                <li><strong>GitHub</strong> – Collaborer et versionner mes projets</li>
+                <li><strong>Responsive Design</strong> – Créer des interfaces adaptables à tous supports</li>
+            </ul>
+            <p> Au-dela des outils, j'aspire a construire des experiences numeriques qui respectent l'humain et qui racontent quelque chose de vrai.</p>
+        </section>
+
+        <section id="projets">
+            <h2>Mes projets</h2>
+            <h3><strong>Quelques realisations</strong></h3>
+            <ul>
+                <li><strong>Page À propos :</strong> Conception d'une page personnelle simple, responsive et elegante. <em> Outils: HTML, CSS Leçon : oser se raconter avec justesse</em>.</li>
+                <li><strong>Formulaire d’inscription :</strong> structure et simplicité. <em>Leçon : rendre accessible l’interaction</em>.</li>
+                <li><strong>Maquette personnalisée :</strong> réinterprétation créative d’un modèle existant. <em>Leçon : affirmer sa voix</em>.</li>
+            </ul>
+        </section>
+
+        <section id="hobbies et activites sportives">
+            <h2>Hobbies et Activites Sportives</h2>
+            <p>Je crois a l'equilibre. C'est dans la marche silencieuse, la lecture attentive, la musique ou l'ecriture intuitive que je me ressource.</p>
+            <ol>
+                <li><strong>Ecriture de textes inspirants:</strong> Pour tisser du sens.</li>
+                <li><strong>Randonnee douce ou Meditation:</strong> Poue couter le corps quand l'esprit s'agite.</li>
+                <li><strong>Moments de retraite:</strong> Pour retrouver mes propres voix interieures.</li>
+            </ol>
+            <p>Ces pratiques nourrissent ma creativite autant que mon code, elles me permettent de creer avec plus de presence et de clarte.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <ul>
+                <li><strong>Nom: <strong>Ferdine Jemima SAINT-SIMON</strong></strong></li>
+                <li><strong>E-mail: </strong><p>Envoyez-moi un e-mail: <a href="mailto:saintsimonferdine0612@gmail.com">Contactez-moi par e-mail</a></p>
+                <li><strong>Facebook: </strong> <p><a href="https://www.facebook.com/ferdine.stsimon?mibextid=ZbWKwL" target="_blank">Visitez ma page Facebook</a></p></li>
+            </ul>
+        </section>
+        <section class="contact-section" id="contact">
+            <h2>Contactez-moi</h2>
+            <form id="contactForm">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Envoyer</button>
+                <p id="form-status"></p>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p> Designed by: Ferdine J. SAINT-SIMON</p>
+        <p>Tous droits reserves - 2025 </p>
+    </footer>
+</body> 
+</html>
